@@ -1,10 +1,13 @@
+package cours.agilite.projetVille;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import cours.agilite.projetVille.Ville;
+
 /**
- * Classe-test testMaire.
+ * Classe-test VilleTest.
  *
  * @author  (votre nom)
  * @version (un numéro de version ou une date)
@@ -27,22 +30,20 @@ import org.junit.Test;
  * qui réalise les engagements, et suivi d'un appel à tearDown(), qui les
  * détruit.
  */
-public class MaireTest
+public class VilleTest
 {
-    private Ville springfield;
-    private Maire joe;
-
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-    
+    protected double fValeur1;
+    protected double fValeur2;
 
     /**
-     * Constructeur de la classe-test testMaire
+     * Constructeur de la classe-test VilleTest
      */
-    public MaireTest()
+    public VilleTest()
     {
     }
 
@@ -54,8 +55,9 @@ public class MaireTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        springfield = new Ville("Springfield", 30720);
-        joe = new Maire("Quimby", "Joe");
+        // Initialisez ici vos engagements
+        fValeur1= 2.0;
+        fValeur2= 3.0;
     }
 
     /**
@@ -69,24 +71,19 @@ public class MaireTest
         //Libérez ici les ressources engagées par setUp()
     }
 
-
     @Test
-    public void testMaire()
+    public void testEmmenagement()
     {
-        assertEquals("Springfield", joe.dirige(springfield));
-        assertEquals(joe, springfield.getMaire());
+        Ville springfield = new Ville("Springfield", 30720);
+        assertEquals(30725, springfield.emmenagement(5));
     }
 
     @Test
-    public void testElection()
+    public void testDemenagement()
     {
-        assertEquals("Joe Quimby", springfield.elire(joe));
-        assertEquals(springfield, joe.getVille());
+        Ville spingfield = new Ville("Springfield", 30720);
+        assertEquals(30710, spingfield.demenagement(10));
     }
 }
-
-
-
-
 
 

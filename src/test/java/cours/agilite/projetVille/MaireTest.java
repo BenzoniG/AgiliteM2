@@ -1,10 +1,14 @@
+package cours.agilite.projetVille;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import cours.agilite.projetVille.Ville;
+import cours.agilite.projetVille.Maire;
+
 /**
- * Classe-test VilleTest.
+ * Classe-test testMaire.
  *
  * @author  (votre nom)
  * @version (un numéro de version ou une date)
@@ -27,20 +31,22 @@ import org.junit.Test;
  * qui réalise les engagements, et suivi d'un appel à tearDown(), qui les
  * détruit.
  */
-public class VilleTest
+public class MaireTest
 {
+    private Ville springfield;
+    private Maire joe;
+
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-    protected double fValeur1;
-    protected double fValeur2;
+    
 
     /**
-     * Constructeur de la classe-test VilleTest
+     * Constructeur de la classe-test testMaire
      */
-    public VilleTest()
+    public MaireTest()
     {
     }
 
@@ -52,9 +58,8 @@ public class VilleTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        // Initialisez ici vos engagements
-        fValeur1= 2.0;
-        fValeur2= 3.0;
+        springfield = new Ville("Springfield", 30720);
+        joe = new Maire("Quimby", "Joe");
     }
 
     /**
@@ -68,19 +73,24 @@ public class VilleTest
         //Libérez ici les ressources engagées par setUp()
     }
 
+
     @Test
-    public void testEmmenagement()
+    public void testMaire()
     {
-        Ville springfield = new Ville("Springfield", 30720);
-        assertEquals(30725, springfield.emmenagement(5));
+        assertEquals("Springfield", joe.dirige(springfield));
+        assertEquals(joe, springfield.getMaire());
     }
 
     @Test
-    public void testDemenagement()
+    public void testElection()
     {
-        Ville spingfield = new Ville("Springfield", 30720);
-        assertEquals(30710, spingfield.demenagement(10));
+        assertEquals("Joe Quimby", springfield.elire(joe));
+        assertEquals(springfield, joe.getVille());
     }
 }
+
+
+
+
 
 

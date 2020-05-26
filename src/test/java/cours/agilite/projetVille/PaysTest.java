@@ -1,6 +1,11 @@
+package cours.agilite.projetVille;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import cours.agilite.projetVille.Ville;
+import cours.agilite.projetVille.Pays;
+
 import static org.junit.Assert.*;
 
 /**
