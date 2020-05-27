@@ -2,19 +2,18 @@ package cours.agilite.projetVille;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.java.fr.Soit;
+import cucumber.api.java.fr.Quand;
+import cucumber.api.java.fr.Alors;
 
 import static org.junit.Assert.assertEquals;
 
 public class CucumberTestSteps {
 
-	private int chiffre;
 
 	@Before
 	public void before() {
-		chiffre = 1;
+		
 	}
 
 	@After
@@ -22,19 +21,20 @@ public class CucumberTestSteps {
 		
 	}
 
-	@Given("^Enter search term '(.*?)'$")
+	@Soit("un habitant et une ville")
 	public void searchFor(String searchTerm) {
-		chiffre = 1;
+		Ville springfield = new Ville("springfield",0);
 	}
 
-	@When("^Do search$")
+	@Quand("l'habitant emménage dans une ville")
 	public void clickSearchButton() {
-		chiffre ++;
+		
 	}
 
-	@Then("^Single result is shown for '(.*?)'$")
+	@Alors("^l'habitant habite dans cette ville qui contient un habitant de plus$")
 	public void assertSingleResult(String searchResult) {
-		assertEquals(2, chiffre);
+		
 	}
+
 }
 
