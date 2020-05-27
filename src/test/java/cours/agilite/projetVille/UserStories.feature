@@ -4,10 +4,17 @@
 
 Fonctionnalité: Création d'un habitant
 
-  Scénario: emménagement
+  Scénario: Emménagement
     Soit un habitant et une ville
     Quand l'habitant emménage dans une ville
-    Alors l'habitant la ville contient un habitant de plus
+    Alors la ville contient un habitant de plus
+
+
+
+  Scénario: Déménagement
+    Soit un habitant
+    Quand l'habitant démménage
+    Alors l'habitant n'est plus référencé dans sa ville d'origine
 
 
 
