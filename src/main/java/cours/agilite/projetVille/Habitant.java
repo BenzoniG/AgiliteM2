@@ -11,6 +11,7 @@ public class Habitant {
 	private boolean depistage;
 	private boolean positifCOVID;
 	private Ville ville;
+	private int nir; /*numéro de sécurité sociale (numero d'inscription au répertoire des personnes physiques.*/
 	
 	public Habitant(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage, boolean positifCOVID, Ville ville)
 	{
