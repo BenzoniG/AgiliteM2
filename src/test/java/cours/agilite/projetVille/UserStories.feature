@@ -2,7 +2,7 @@
 #Author: Guillaume BENZONI
 
 
-Fonctionnalité: Création d'un habitant
+Fonctionnalité: Emmenagement d'un nouvel habitant
 
   Scénario: Emménagement
     Soit un habitant et une ville
@@ -10,13 +10,12 @@ Fonctionnalité: Création d'un habitant
     Alors il est ajouté à la liste des habitants de cette ville
 
 
-
   Scénario: Déménagement
     Soit un habitant
     Quand l'habitant démménage
     Alors l'habitant n'est plus référencé dans sa ville d'origine mais sa nouvelle ville
     
-    
+
   Scénario: suivi de l'évolution du covid
     Soit une ville contenant des habitants
     Quand un employé s'interroge sur cette ville

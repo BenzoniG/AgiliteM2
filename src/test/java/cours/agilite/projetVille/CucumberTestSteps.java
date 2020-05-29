@@ -14,6 +14,8 @@ public class CucumberTestSteps {
 
 	private Ville springfield;
 	private Habitant homer;
+	private Habitant marge;
+	private Habitant bart;
 	private Ville paris;
 	
 	
@@ -27,8 +29,8 @@ public class CucumberTestSteps {
 		
 	}
 
-	@Soit("un habitant et une ville")
-	public void soitUs1(String searchTerm) 
+	@Soit("un habitant")
+	public void soitUs1() 
 	{
 		springfield = new Ville("Springfield", 0);
 		paris = new Ville("Paris", 0);
@@ -42,18 +44,18 @@ public class CucumberTestSteps {
 	}
 
 	@Alors("il est ajouté à la liste des habitants de cette ville")
-	public void alorsUs1(String searchResult) 
+	public void alorsUs1() 
 	{
 		assertEquals(homer, paris.getHabitant("Homer", "Simpson"));
 	}
 
-	@Soit("un habitant")
-	public void soitus2(String searchTerm) 
+	/*@Soit("un habitant")
+	public void soitus2() 
 	{
 		springfield = new Ville("Springfield", 0);
 		paris = new Ville("Paris", 0);
 		homer = new Habitant("Homer", "Simpson", new Date(1980,01,01), "H", false, false, springfield, 0);
-	}
+	}*/
 
 	@Quand("l'habitant démménage")
 	public void quandUs2() 
@@ -62,16 +64,22 @@ public class CucumberTestSteps {
 	}
 
 	@Alors("l'habitant n'est plus référencé dans sa ville d'origine mais sa nouvelle ville")
-	public void alorsUs2(String searchResult) 
+	public void alorsUs2() 
 	{
 		assertEquals(null, springfield.getHabitant("Homer", "Simpson"));
 		assertEquals(homer, paris.getHabitant("Homer", "Simpson"));
 	}
 
 	@Soit("une ville contenant des habitants")
-	public void soitUs3(String searchTerm) 
+	public void soitUs3() 
 	{
+		springfield = new Ville("Springfield", 0);
 		homer = new Habitant("Homer", "Simpson", new Date(1980,01,01), "H", false, false, springfield, 0);
+		marge = new Habitant("Marge", "Simpson", new Date(1982,01,01), "H", true, false, springfield, 0);
+		bart = new Habitant("Bart", "Simpson", new Date(1998,01,01), "H", true, true, springfield, 0);
+		homer.demenage(springfield);
+		marge.demenage(springfield);
+		bart.demenage(springfield);
 	}
 
 	@Quand("un employé s'interroge sur cette ville")
@@ -81,9 +89,9 @@ public class CucumberTestSteps {
 	}
 
 	@Alors("il peut afficher le % de la population infecté par le COVID-19")
-	public void alorsUs3(String searchResult) 
+	public void alorsUs3() 
 	{
-		
+		assertEquals(1*100/3, springfield.getPropagation(), 0);
 	}
 
 }

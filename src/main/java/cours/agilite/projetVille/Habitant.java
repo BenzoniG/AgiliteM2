@@ -43,6 +43,8 @@ public class Habitant {
 	
 	public void demenage(Ville ville)
 	{
+		this.ville.demenagement(this);
+		ville.emmenagement(this);
 		this.ville = ville;
 	}
 	

@@ -1,9 +1,18 @@
 package cours.agilite.projetVille.habitantCovid19;
 
+import java.util.Date;
+
 import cours.agilite.projetVille.Habitant;
+import cours.agilite.projetVille.Ville;
 
 public class HabitantInfecte extends Habitant{
 	
+	public HabitantInfecte(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage,
+			boolean positifCOVID, Ville ville, int nir) {
+		super(prenom, nom, dateNaissance, sexe, depistage, positifCOVID, ville, nir);
+		// TODO Auto-generated constructor stub
+	}
+
 	boolean positif;
 	boolean symptomes;
 	boolean possedeAnticorps;

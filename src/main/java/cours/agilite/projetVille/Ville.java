@@ -1,5 +1,6 @@
 package cours.agilite.projetVille;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ville
@@ -16,6 +17,7 @@ public class Ville
     {
         this.nom = nom;
         this.nbHabitants = population;
+        habitants = new ArrayList<Habitant>();
     }
     
     public String getNom(){
@@ -61,8 +63,12 @@ public class Ville
      * 
      * @param  nbHabitants   Nombre de départ
      */
-    public int demenagement(int nbHabitants)
+    public int demenagement(Habitant habitant)
     {
+    	if(habitants.contains(habitant))
+    	{
+    		habitants.remove(habitant);
+    	}
         this.nbHabitants -=  nbHabitants;
         return this.nbHabitants;
     }
@@ -78,7 +84,7 @@ public class Ville
         return maire.getPrenom() + " " + maire.getNom();
     }
     
-    public Habitant getHabitant(String nom, String prenom)
+    public Habitant getHabitant(String prenom, String nom)
     {
     	for(Habitant habitant : habitants)
     	{
@@ -89,5 +95,20 @@ public class Ville
     	}
     	
     	return null;
+    }
+    
+    public double getPropagation()
+    {
+    	int total = 0;
+    	
+    	for(Habitant habitant : habitants)
+    	{
+    		if(habitant.getPositifCOVID())
+    		{
+    			total ++;
+    		}
+    	}
+    	
+    	return total*100/habitants.size();
     }
 }
