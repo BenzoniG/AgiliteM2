@@ -18,7 +18,7 @@ Fonctionnalité: Création d'un habitant
     
     
   Scénario: suivi de l'évolution du covid
-    Soit une ville
+    Soit une ville contenant des habitants
     Quand un employé s'interroge sur cette ville
     Alors il peut afficher le % de la population infecté par le COVID-19    
     

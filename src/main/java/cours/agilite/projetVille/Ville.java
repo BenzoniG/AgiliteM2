@@ -49,8 +49,9 @@ public class Ville
      * 
      * @param  nbHabitants   Nombre d'arrivant
      */
-    public int emmenagement(int nbHabitants)
+    public int emmenagement(Habitant habitant)
     {
+    	habitants.add(habitant);
         this.nbHabitants +=  nbHabitants;
         return this.nbHabitants;
     }  
@@ -75,5 +76,18 @@ public class Ville
         }
       
         return maire.getPrenom() + " " + maire.getNom();
+    }
+    
+    public Habitant getHabitant(String nom, String prenom)
+    {
+    	for(Habitant habitant : habitants)
+    	{
+    		if(habitant.getNom() == nom && habitant.getPrenom() == prenom)
+    		{
+    			return habitant;
+    		}
+    	}
+    	
+    	return null;
     }
 }

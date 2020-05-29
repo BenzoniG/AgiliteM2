@@ -13,7 +13,7 @@ public class Habitant {
 	private Ville ville;
 	private int nir; /*numéro de sécurité sociale (numero d'inscription au répertoire des personnes physiques.*/
 	
-	public Habitant(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage, boolean positifCOVID, Ville ville)
+	public Habitant(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage, boolean positifCOVID, Ville ville, int nir)
 	{
 		this.prenom = prenom;
 		this.nom = nom;
@@ -22,6 +22,7 @@ public class Habitant {
 		this.depistage = depistage;
 		this.positifCOVID = positifCOVID;
 		this.ville = ville;
+		this.nir = nir;
 	}
 	
 	public String getPrenom() { return this.prenom; }
