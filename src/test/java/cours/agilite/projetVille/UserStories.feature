@@ -7,14 +7,22 @@ Fonctionnalité: Création d'un habitant
   Scénario: Emménagement
     Soit un habitant et une ville
     Quand l'habitant emménage dans une ville
-    Alors la ville contient un habitant de plus
+    Alors il est ajouté à la liste des habitants de cette ville
 
 
 
   Scénario: Déménagement
     Soit un habitant
     Quand l'habitant démménage
-    Alors l'habitant n'est plus référencé dans sa ville d'origine
+    Alors l'habitant n'est plus référencé dans sa ville d'origine mais sa nouvelle ville
+    
+    
+  Scénario: suivi de l'évolution du covid
+    Soit une ville
+    Quand un employé s'interroge sur cette ville
+    Alors il peut afficher le % de la population infecté par le COVID-19    
+    
+    
 
 
 

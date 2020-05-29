@@ -31,6 +31,7 @@ public class Habitant {
 	public boolean getDepistage() { return this.depistage; }	
 	public boolean getPositifCOVID() { return this.positifCOVID; }	
 	public Ville getVille() { return this.ville; }
+	public int getNir() { return this.nir; }
 	
 	
 	public void testCovid(boolean resultat)
