@@ -11,9 +11,8 @@ public class Habitant {
 	private boolean depistage;
 	private boolean positifCOVID;
 	private Ville ville;
-	private int nir; /*numéro de sécurité sociale (numero d'inscription au répertoire des personnes physiques.*/
 	
-	public Habitant(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage, boolean positifCOVID, Ville ville, int nir)
+	public Habitant(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage, boolean positifCOVID, Ville ville)
 	{
 		this.prenom = prenom;
 		this.nom = nom;
@@ -22,7 +21,6 @@ public class Habitant {
 		this.depistage = depistage;
 		this.positifCOVID = positifCOVID;
 		this.ville = ville;
-		this.nir = nir;
 	}
 	
 	public String getPrenom() { return this.prenom; }
@@ -32,7 +30,6 @@ public class Habitant {
 	public boolean getDepistage() { return this.depistage; }	
 	public boolean getPositifCOVID() { return this.positifCOVID; }	
 	public Ville getVille() { return this.ville; }
-	public int getNir() { return this.nir; }
 	
 	
 	public void testCovid(boolean resultat)

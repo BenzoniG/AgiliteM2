@@ -18,7 +18,7 @@ Fonctionnalité: Emmenagement d'un nouvel habitant
 
   Scénario: suivi de l'évolution du covid
     Soit une ville contenant des habitants
-    Quand un employé s'interroge sur cette ville
+    Quand le maire s'interroge sur la propagation du COVID entre les habitants
     Alors il peut afficher le % de la population infecté par le COVID-19    
     
     

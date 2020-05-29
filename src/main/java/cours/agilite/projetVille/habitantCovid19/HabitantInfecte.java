@@ -9,7 +9,7 @@ public class HabitantInfecte extends Habitant{
 	
 	public HabitantInfecte(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage,
 			boolean positifCOVID, Ville ville, int nir) {
-		super(prenom, nom, dateNaissance, sexe, depistage, positifCOVID, ville, nir);
+		super(prenom, nom, dateNaissance, sexe, depistage, positifCOVID, ville);
 		// TODO Auto-generated constructor stub
 	}
 

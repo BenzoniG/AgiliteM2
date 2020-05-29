@@ -34,7 +34,7 @@ public class CucumberTestSteps {
 	{
 		springfield = new Ville("Springfield", 0);
 		paris = new Ville("Paris", 0);
-		homer = new Habitant("Homer", "Simpson", new Date(1980,01,01), "H", false, false, springfield, 0);
+		homer = new Habitant("Homer", "Simpson", new Date(1980,01,01), "H", false, false, springfield);
 	}
 
 	@Quand("l'habitant emménage dans une ville")
@@ -74,15 +74,15 @@ public class CucumberTestSteps {
 	public void soitUs3() 
 	{
 		springfield = new Ville("Springfield", 0);
-		homer = new Habitant("Homer", "Simpson", new Date(1980,01,01), "H", false, false, springfield, 0);
-		marge = new Habitant("Marge", "Simpson", new Date(1982,01,01), "H", true, false, springfield, 0);
-		bart = new Habitant("Bart", "Simpson", new Date(1998,01,01), "H", true, true, springfield, 0);
+		homer = new Habitant("Homer", "Simpson", new Date(1980,01,01), "H", false, false, springfield);
+		marge = new Habitant("Marge", "Simpson", new Date(1982,01,01), "H", true, false, springfield);
+		bart = new Habitant("Bart", "Simpson", new Date(1998,01,01), "H", true, true, springfield);
 		homer.demenage(springfield);
 		marge.demenage(springfield);
 		bart.demenage(springfield);
 	}
 
-	@Quand("un employé s'interroge sur cette ville")
+	@Quand("le maire s'interroge sur la propagation du COVID entre les habitants")
 	public void quandUs3() 
 	{
 		
