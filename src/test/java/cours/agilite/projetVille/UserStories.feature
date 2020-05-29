@@ -18,6 +18,12 @@ Fonctionnalité: Création d'un habitant
 
 
 
+
+
+
+
+
+
 #			Exemples: 
 #      | name  | value | status  |
 #      | name1 |     5 | success |

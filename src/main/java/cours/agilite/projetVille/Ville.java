@@ -1,4 +1,7 @@
 package cours.agilite.projetVille;
+
+import java.util.List;
+
 public class Ville
 {
     // variables d'instance
@@ -7,6 +10,7 @@ public class Ville
     private Maire maire;
     
     private Pays pays;
+    private List<Habitant> habitants;
     
     public Ville(String nom, int population)
     {
