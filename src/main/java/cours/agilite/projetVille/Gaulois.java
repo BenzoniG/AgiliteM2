@@ -15,6 +15,7 @@ public class Gaulois
     private int vitesse;
     private int force;
     private ArrayList<Gaulois>amis;
+    private ArrayList<CovidAbonne>abonnes; 
     private Romain ennemi;
 
     /**
@@ -90,5 +91,16 @@ public class Gaulois
 	}
 	public void setEnnemi(Romain ennemi) {
 		this.ennemi = ennemi;
+	}
+	public ArrayList<CovidAbonne> getAbonnes() {
+		return abonnes;
+	}
+	public void setAbonnes(ArrayList<CovidAbonne> abonnes) {
+		this.abonnes = abonnes;
+	}
+	public void notifie() {
+		for(CovidAbonne a: this.getAbonnes()) {
+			a.notify();
+		}
 	}
 }
