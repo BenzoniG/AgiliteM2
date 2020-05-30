@@ -98,6 +98,13 @@ public class Gaulois
 	public void setAbonnes(ArrayList<CovidAbonne> abonnes) {
 		this.abonnes = abonnes;
 	}
+	public void ajoutAbonne(CovidAbonne abonne) {
+		this.abonnes.add(abonne);
+		
+	}
+	public void supprimeAbonne(CovidAbonne abonne) {
+		this.abonnes.remove(abonne);
+	}
 	public void notifie() {
 		for(CovidAbonne a: this.getAbonnes()) {
 			a.notify();
