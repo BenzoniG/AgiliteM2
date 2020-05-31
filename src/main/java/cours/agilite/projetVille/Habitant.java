@@ -2,7 +2,6 @@ package cours.agilite.projetVille;
 
 public class Habitant 
 {
-	
 	protected String prenom;
 	protected String nom;
 	protected String sexe;
