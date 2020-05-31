@@ -4,7 +4,6 @@ package cours.agilite.projetVille.gaulois;
 
 import java.util.ArrayList;
 
-import cours.agilite.projetVille.CovidAbonne;
 
 /**
  * 
@@ -17,7 +16,6 @@ public class Gaulois
     private int vitesse;
     private int force;
     private ArrayList<Gaulois>amis;
-    private ArrayList<CovidAbonne>abonnes; 
     private Romain ennemi;
 
     /**
@@ -94,23 +92,5 @@ public class Gaulois
 	public void setEnnemi(Romain ennemi) {
 		this.ennemi = ennemi;
 	}
-	public ArrayList<CovidAbonne> getAbonnes() {
-		return abonnes;
-	}
-	public void setAbonnes(ArrayList<CovidAbonne> abonnes) {
-		this.abonnes = abonnes;
-	}
-	public void ajoutAbonne(CovidAbonne abonne) {
-		this.abonnes.add(abonne);
-		
-	}
-	public void supprimeAbonne(CovidAbonne abonne) {
-		this.abonnes.remove(abonne);
-	}
-	
-	public void notifie() {
-		for(CovidAbonne a: this.getAbonnes()) {
-			a.notify();
-		}
-	}
+
 }
