@@ -41,35 +41,30 @@ public class AdaptateurGaulois extends Habitant
     public void boirePotionMagique()
     {
         this.gaulois.boirePotionMagique();
+        this.testCovid = false;
     }
 
 	@Override
 	public void testCovid()
-	{
-		boolean contamination = false;
-		
-		double tauxPropagation = Math.min(1, this.ville.tauxInfection()+0.1);
-		
-		for(Habitant habitant : this.ville.getHabitants())
+	{		
+		if(this.getForce() < 500)
 		{
-			if(habitant instanceof AdaptateurGaulois && habitant.getTestCovid())
+			boolean contamination = false;
+			
+			double tauxPropagation = Math.min(1, this.ville.tauxInfection()+0.1);
+			
+			if(!this.testCovid)
 			{
-				AdaptateurGaulois ami = (AdaptateurGaulois)habitant;
-				if(this.getAmis().contains(ami.getGaulois())) tauxPropagation = 9/10;
+				double rand = Math.random();
+				if(rand < tauxPropagation) 
+				{
+					contamination = true;
+					notifyObservers();
+				}
 			}
+			else contamination = true;
+	
+			this.testCovid = contamination;
 		}
-		
-		if(!this.testCovid)
-		{
-			double rand = Math.random();
-			if(rand < tauxPropagation) 
-			{
-				contamination = true;
-				notifyObservers();
-			}
-		}
-		else contamination = true;
-
-		this.testCovid = contamination;
 	}
 }
