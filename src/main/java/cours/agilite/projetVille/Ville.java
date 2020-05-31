@@ -33,9 +33,10 @@ public class Ville
     	habitants.add(habitant);
     }  
 
-    public void demenagement(Habitant habitant)
+    public void demenagement(Habitant habitant) throws Exception
     {
     	if(habitants.contains(habitant)) habitants.remove(habitant);
+    	else throw new Exception("L'habitant n'habite pas dans la ville");
     }
     
     public void election(Maire maire) throws Exception
