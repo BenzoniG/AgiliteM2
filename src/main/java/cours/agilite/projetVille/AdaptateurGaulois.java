@@ -44,7 +44,7 @@ public class AdaptateurGaulois extends Habitant
     }
 
 	@Override
-	public boolean testCovid()
+	public void testCovid()
 	{
 		boolean contamination = false;
 		
@@ -62,12 +62,14 @@ public class AdaptateurGaulois extends Habitant
 		if(!this.testCovid)
 		{
 			double rand = Math.random();
-			if(rand < tauxPropagation) contamination = true;
-			else contamination = false;
+			if(rand < tauxPropagation) 
+			{
+				contamination = true;
+				notifyObservers();
+			}
 		}
 		else contamination = true;
 
 		this.testCovid = contamination;
-		return contamination;
 	}
 }
