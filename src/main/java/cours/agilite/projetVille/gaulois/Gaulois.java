@@ -107,6 +107,7 @@ public class Gaulois
 	public void supprimeAbonne(CovidAbonne abonne) {
 		this.abonnes.remove(abonne);
 	}
+	
 	public void notifie() {
 		for(CovidAbonne a: this.getAbonnes()) {
 			a.notify();

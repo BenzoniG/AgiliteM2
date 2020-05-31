@@ -39,7 +39,7 @@ public class CucumberTestSteps {
 	}
 
 	@Quand("l'habitant emménage dans une ville")
-	public void quandUs1() 
+	public void quandUs1() throws Exception 
 	{
 		homer.demenager(paris);
 	}
@@ -59,7 +59,7 @@ public class CucumberTestSteps {
 	}*/
 
 	@Quand("l'habitant démménage")
-	public void quandUs2() 
+	public void quandUs2() throws Exception 
 	{
 		homer.demenager(paris);
 	}
@@ -72,7 +72,7 @@ public class CucumberTestSteps {
 	}
 
 	@Soit("une ville contenant des habitants")
-	public void soitUs3() 
+	public void soitUs3() throws Exception 
 	{
 		springfield = new Ville("Springfield", france);
 		homer = new Habitant("Homer", "Simpson", "H", springfield);
