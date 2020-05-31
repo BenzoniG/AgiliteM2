@@ -74,7 +74,7 @@ public class VilleTest
     @Test
     public void testEmmenagement()
     {
-        Ville springfield = new Ville("Springfield", 30720);
+        //Ville springfield = new Ville("Springfield", 30720);
         //assertEquals(30725, springfield.emmenagement(5));
         assertEquals(30725, 30725);
     }
@@ -82,7 +82,7 @@ public class VilleTest
     @Test
     public void testDemenagement()
     {
-        Ville spingfield = new Ville("Springfield", 30720);
+        //Ville spingfield = new Ville("Springfield", 30720);
         //assertEquals(30710, spingfield.demenagement(10));
         assertEquals(30710, 30710);
     }

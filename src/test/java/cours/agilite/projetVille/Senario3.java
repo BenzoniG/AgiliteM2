@@ -1,3 +1,4 @@
+package cours.agilite.projetVille;
 //package cours.agilite.projetVille.habitantCovid19.cucumberTests;
 //
 //import cucumber.api.java.en.Given;

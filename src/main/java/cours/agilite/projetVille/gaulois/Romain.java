@@ -1,6 +1,4 @@
-package cours.agilite.projetVille;
-
-
+package cours.agilite.projetVille.gaulois;
 
 /**
  * D�crivez votre classe Romain ici.

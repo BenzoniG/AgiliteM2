@@ -6,6 +6,9 @@ import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import cours.agilite.projetVille.gaulois.Gaulois;
+
 import org.junit.After;
 import org.junit.Before;;
 

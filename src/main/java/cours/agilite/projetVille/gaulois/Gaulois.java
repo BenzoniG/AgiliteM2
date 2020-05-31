@@ -1,8 +1,10 @@
-package cours.agilite.projetVille;
+package cours.agilite.projetVille.gaulois;
 
 
 
 import java.util.ArrayList;
+
+import cours.agilite.projetVille.CovidAbonne;
 
 /**
  * 

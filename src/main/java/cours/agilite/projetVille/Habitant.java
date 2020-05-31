@@ -1,49 +1,49 @@
 package cours.agilite.projetVille;
 
-import java.util.Date;
-
-public class Habitant {
+public class Habitant 
+{
 	
-	private String prenom;
-	private String nom;
-	private Date dateNaissance;
-	private String sexe;
-	private boolean depistage;
-	private boolean positifCOVID;
-	private Ville ville;
+	protected String prenom;
+	protected String nom;
+	protected String sexe;
+	protected boolean testCovid;
+	protected Ville ville;
 	
-	public Habitant(String prenom, String nom, Date dateNaissance, String sexe, boolean depistage, boolean positifCOVID, Ville ville)
+	public Habitant(String prenom, String nom, String sexe, Ville ville)
 	{
 		this.prenom = prenom;
 		this.nom = nom;
-		this.dateNaissance = dateNaissance;
 		this.sexe = sexe;
-		this.depistage = depistage;
-		this.positifCOVID = positifCOVID;
 		this.ville = ville;
 	}
 	
 	public String getPrenom() { return this.prenom; }
 	public String getNom() { return this.nom; }	
-	public Date getAge() { return this.dateNaissance; }	
-	public String getSexe() { return this.sexe; }	
-	public boolean getDepistage() { return this.depistage; }	
-	public boolean getPositifCOVID() { return this.positifCOVID; }	
+	public String getSexe() { return this.sexe; }		
+	public boolean getPositifCOVID() { return this.testCovid; }	
 	public Ville getVille() { return this.ville; }
 	
-	
-	public void testCovid(boolean resultat)
-	{
-		this.depistage = true;
-		this.positifCOVID = resultat;
-	}
-	
-	public void demenage(Ville ville)
+	public void demenager(Ville ville)
 	{
 		this.ville.demenagement(this);
 		ville.emmenagement(this);
 		this.ville = ville;
 	}
-	
-
+		
+	public boolean testCovid()
+	{
+		boolean contamination = false;
+		double tauxPropagation = Math.min(1, this.ville.tauxInfection()+0.1);
+		
+		if(!this.testCovid)
+		{
+			double rand = Math.random();
+			if(rand < tauxPropagation) contamination = true;
+			else contamination = false;
+		}
+		else contamination = true;
+		
+		this.testCovid = contamination;
+		return contamination;
+	}
 }

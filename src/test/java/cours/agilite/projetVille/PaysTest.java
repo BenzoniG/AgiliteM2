@@ -15,7 +15,7 @@ public class PaysTest
 {
     private Ville paris;
     private Ville perpignan;
-    private Pays france;    
+    private Pays france = new Pays("France");    
     
     public PaysTest(){}
 
@@ -23,9 +23,8 @@ public class PaysTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        paris = new Ville("Paris", 2148000);
-        perpignan = new Ville("Perpignan", 121934);
-        france = new Pays("France", 643801, paris);
+        paris = new Ville("Paris", france);
+        perpignan = new Ville("Perpignan", france);
         france.ajouterVille(perpignan);
         paris.setPays(france);
         perpignan.setPays(france);

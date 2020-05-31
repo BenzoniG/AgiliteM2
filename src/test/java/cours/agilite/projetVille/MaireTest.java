@@ -35,6 +35,7 @@ public class MaireTest
 {
     private Ville springfield;
     private Maire joe;
+    private Pays france = new Pays("France");
 
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
@@ -58,8 +59,8 @@ public class MaireTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
-        springfield = new Ville("Springfield", 30720);
-        joe = new Maire("Quimby", "Joe");
+        springfield = new Ville("Springfield", france);
+        joe = new Maire("Quimby", "Joe", "H", springfield);
     }
 
     /**
@@ -75,17 +76,11 @@ public class MaireTest
 
 
     @Test
-    public void testMaire()
+    public void testMaire() throws Exception
     {
-        assertEquals("Springfield", joe.dirige(springfield));
-        assertEquals(joe, springfield.getMaire());
-    }
-
-    @Test
-    public void testElection()
-    {
-        assertEquals("Joe Quimby", springfield.elire(joe));
+    	springfield.election(joe);
         assertEquals(springfield, joe.getVille());
+        assertEquals(joe, springfield.getMaire());
     }
 }
 
