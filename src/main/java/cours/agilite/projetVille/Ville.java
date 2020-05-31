@@ -63,7 +63,7 @@ public class Ville
     		if(habitant.getPositifCOVID()) infectes ++;
     	}
     	
-    	resultat = infectes*100/habitants.size();
+    	resultat = infectes/habitants.size();
     	return resultat;
     }
 }
