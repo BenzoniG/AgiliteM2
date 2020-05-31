@@ -52,7 +52,7 @@ public class AdaptateurGaulois extends Habitant
 		
 		for(Habitant habitant : this.ville.getHabitants())
 		{
-			if(habitant instanceof AdaptateurGaulois && habitant.testCovid)
+			if(habitant instanceof AdaptateurGaulois && habitant.getTestCovid())
 			{
 				AdaptateurGaulois ami = (AdaptateurGaulois)habitant;
 				if(this.getAmis().contains(ami.getGaulois())) tauxPropagation = 9/10;
