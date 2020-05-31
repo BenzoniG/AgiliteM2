@@ -1,6 +1,8 @@
 package cours.agilite.projetVille;
 
-public class Habitant 
+import java.util.Observable;
+
+public class Habitant extends Observable
 {
 	protected String prenom;
 	protected String nom;
@@ -14,6 +16,7 @@ public class Habitant
 		this.nom = nom;
 		this.sexe = sexe;
 		this.ville = ville;
+		this.testCovid = false;
 	}
 	
 	public String getPrenom() { return this.prenom; }
@@ -29,7 +32,7 @@ public class Habitant
 		this.ville = ville;
 	}
 		
-	public boolean testCovid()
+	public void testCovid()
 	{
 		boolean contamination = false;
 		double tauxPropagation = Math.min(1, this.ville.tauxInfection()+0.1);
@@ -37,12 +40,14 @@ public class Habitant
 		if(!this.testCovid)
 		{
 			double rand = Math.random();
-			if(rand < tauxPropagation) contamination = true;
-			else contamination = false;
+			if(rand < tauxPropagation)
+			{
+				contamination = true;
+				notifyObservers();
+			}
 		}
 		else contamination = true;
 		
 		this.testCovid = contamination;
-		return contamination;
 	}
 }

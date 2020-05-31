@@ -2,13 +2,16 @@ package cours.agilite.projetVille;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Ville
+public class Ville implements Observer
 {
     private String nom;
     private Pays pays;
     private Maire maire;
     private List<Habitant> habitants;
+    private double tauxInfection;
     
     public Ville(String nom, Pays pays)
     {
@@ -31,6 +34,7 @@ public class Ville
     public void emmenagement(Habitant habitant)
     {
     	habitants.add(habitant);
+    	habitant.addObserver(this);
     }  
 
     public void demenagement(Habitant habitant) throws Exception
@@ -65,6 +69,13 @@ public class Ville
     	}
     	
     	resultat = infectes/habitants.size();
+    	this.tauxInfection = resultat;
     	return resultat;
     }
+
+	@Override
+	public void update(Observable o, Object arg) 
+	{		
+		this.tauxInfection();
+	}
 }

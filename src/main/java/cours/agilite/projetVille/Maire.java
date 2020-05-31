@@ -6,4 +6,12 @@ public class Maire extends Habitant
     {
 		super(prenom, nom, sexe, ville);
 	}
+	
+	public void testerPopulation()
+	{
+		for(Habitant citoyen : this.ville.getHabitants())
+		{
+			citoyen.testCovid();
+		}
+	}
 }
