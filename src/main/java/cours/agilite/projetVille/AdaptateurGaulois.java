@@ -55,7 +55,7 @@ public class AdaptateurGaulois extends Habitant
 			if(habitant instanceof AdaptateurGaulois)
 			{
 				AdaptateurGaulois ami = (AdaptateurGaulois)habitant;
-				if(this.getAmis().contains(ami.getGaulois())) tauxPropagation = 8/10;
+				if(this.getAmis().contains(ami.getGaulois())) tauxPropagation = 9/10;
 			}
 		}
 		
