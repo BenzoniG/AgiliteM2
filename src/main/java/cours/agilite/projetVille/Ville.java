@@ -61,7 +61,7 @@ public class Ville
     	
     	for(Habitant habitant : habitants)
     	{
-    		if(habitant.getPositifCOVID()) infectes ++;
+    		if(habitant.getTestCovid()) infectes ++;
     	}
     	
     	resultat = infectes/habitants.size();

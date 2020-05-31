@@ -19,7 +19,7 @@ public class Habitant
 	public String getPrenom() { return this.prenom; }
 	public String getNom() { return this.nom; }	
 	public String getSexe() { return this.sexe; }		
-	public boolean getPositifCOVID() { return this.testCovid; }	
+	public boolean getTestCovid() { return this.testCovid; }	
 	public Ville getVille() { return this.ville; }
 	
 	public void demenager(Ville ville) throws Exception
