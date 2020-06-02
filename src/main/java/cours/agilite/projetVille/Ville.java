@@ -18,6 +18,7 @@ public class Ville implements Observer
         this.nom = nom;
         this.pays = pays;
         this.habitants = new ArrayList<Habitant>();
+        this.tauxInfection = 0;
     }
 
     
@@ -25,6 +26,7 @@ public class Ville implements Observer
     public Pays getPays(){ return this.pays; }
     public Maire getMaire(){ return this.maire; }    
     public List<Habitant> getHabitants(){ return this.habitants; }
+    public double getTauxInfection(){ return this.tauxInfection; }
     
     public void setPays(Pays pays)
     {
@@ -64,7 +66,7 @@ public class Ville implements Observer
     
     public double tauxInfection()
     {
-    	int infectes = 0;
+    	double infectes = 0;
     	double resultat = 0;
     	
     	for(Habitant habitant : habitants)

@@ -17,6 +17,7 @@ public class Habitant extends Observable
 		this.sexe = sexe;
 		this.ville = ville;
 		this.testCovid = false;
+		ville.emmenagement(this);
 	}
 	
 	public String getPrenom() { return this.prenom; }
@@ -24,6 +25,13 @@ public class Habitant extends Observable
 	public String getSexe() { return this.sexe; }		
 	public boolean getTestCovid() { return this.testCovid; }	
 	public Ville getVille() { return this.ville; }
+	
+	public void setTestCovid(boolean resultat)
+	{  
+		this.testCovid = resultat;
+        setChanged();
+		notifyObservers();
+	}
 	
 	public void demenager(Ville ville) throws Exception
 	{
@@ -43,6 +51,7 @@ public class Habitant extends Observable
 			if(rand < tauxPropagation)
 			{
 				contamination = true;
+		        setChanged();
 				notifyObservers();
 			}
 		}

@@ -1,7 +1,6 @@
 package cours.agilite.projetVille;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import cours.agilite.projetVille.gaulois.Gaulois;
 import cours.agilite.projetVille.gaulois.Romain;
