@@ -7,7 +7,7 @@ import cours.agilite.projetVille.gaulois.Gaulois;
 import cours.agilite.projetVille.gaulois.Romain;
 
 public class AdaptateurRomain extends Habitant 
-{
+{ 
 	private Romain romain;
 
 	public AdaptateurRomain(String prenom, String nom, String sexe, Ville ville, int vitesse , int force, Gaulois gaulois) 

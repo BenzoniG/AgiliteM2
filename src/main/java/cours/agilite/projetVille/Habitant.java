@@ -27,7 +27,7 @@ public class Habitant extends Observable
 	public Ville getVille() { return this.ville; }
 	
 	public void setTestCovid(boolean resultat)
-	{ 
+	{  
 		this.testCovid = resultat;
         setChanged();
 		notifyObservers();
