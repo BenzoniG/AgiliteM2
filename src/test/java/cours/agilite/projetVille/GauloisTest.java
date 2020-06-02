@@ -16,7 +16,9 @@ public class GauloisTest {
 	private Gaulois asterix;
 	private Gaulois obelix;
 	private Romain cesar;
-
+	
+	//test
+	
 	@Before
 	public void setUp() 
 	{
