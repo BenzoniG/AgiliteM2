@@ -16,8 +16,6 @@ public class GauloisTest {
 	private Gaulois asterix;
 	private Gaulois obelix;
 	private Romain cesar;
-
-	// test mail git
 	
 	@Before
 	public void setUp() 
