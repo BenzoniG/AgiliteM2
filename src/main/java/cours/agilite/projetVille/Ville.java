@@ -38,9 +38,12 @@ public class Ville implements Observer
 
     public void demenagement(Habitant habitant) throws Exception
     {
-    	if(habitants.contains(habitant)) habitants.remove(habitant);
+    	if(habitants.contains(habitant))
+		{
+    		habitants.remove(habitant);
+        	habitant.addObserver(this);
+		}
     	else throw new Exception("L'habitant n'habite pas dans la ville");
-    	habitant.addObserver(this);
     }
     
     public void election(Maire maire) throws Exception
