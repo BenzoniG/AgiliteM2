@@ -49,22 +49,7 @@ public class AdaptateurGaulois extends Habitant
 	{		
 		if(this.getForce() < 500)
 		{
-			boolean contamination = false;
-			
-			double tauxPropagation = Math.min(1, this.ville.tauxInfection()+0.1);
-			
-			if(!this.testCovid)
-			{
-				double rand = Math.random();
-				if(rand < tauxPropagation) 
-				{
-					contamination = true;
-					notifyObservers();
-				}
-			}
-			else contamination = true;
-	
-			this.testCovid = contamination;
+			super.testCovid();
 		}
 	}
 }
