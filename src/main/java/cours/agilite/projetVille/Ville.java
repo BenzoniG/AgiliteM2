@@ -19,7 +19,7 @@ public class Ville implements Observer
         this.pays = pays;
         this.habitants = new ArrayList<Habitant>();
     }
-    //la classe ville abonnée au habitants
+
     
     public String getNom(){ return this.nom; }
     public Pays getPays(){ return this.pays; }
