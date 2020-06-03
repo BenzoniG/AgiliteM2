@@ -26,8 +26,8 @@ public class AdaptateurTest {
 	{
 		gaule = new Pays("Gaule");
 		ville = new Ville("village", gaule);
-		asterix = new AdaptateurGaulois("Asterix", "", "H", ville, 10, 15);
-		asterix = new AdaptateurGaulois("Obelix", "", "H", ville, 10, 15);
+		asterix = new AdaptateurGaulois("Asterix", "", "H", ville, 10, 10);
+		asterix = new AdaptateurGaulois("Obelix", "", "H", ville, 10, 10);
 	}
 
 	/***
