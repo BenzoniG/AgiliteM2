@@ -18,7 +18,7 @@ public class AdaptateurRomain extends Habitant
 	}
 	
 	public Romain getRomain() { return this.romain; }
-    public int getForce(){ return this.romain.getForce(); }
+    public int getForce(){ return this.romain.getForce(); } 
     public int getVitesse(){ return this.romain.getVitesse(); }
 
     public void  setForce(int force){ this.romain.setForce(force); }
