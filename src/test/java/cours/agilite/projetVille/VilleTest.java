@@ -62,7 +62,7 @@ public class VilleTest
     public void setUp() // throws java.lang.Exception
     {
         // Initialisez ici vos engagements
-        springfield = new Ville("Paris", france);
+        paris = new Ville("Paris", france);
         springfield = new Ville("Springfield", france);
         joe = new Maire("Quimby", "Joe", "H", springfield);
         homer = new Habitant("Homer", "Simpson", "H", springfield);
