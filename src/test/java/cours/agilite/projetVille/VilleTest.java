@@ -37,8 +37,14 @@ public class VilleTest
     // à l'aide du menu contextuel "Présentoir --> Engagements".
     // Notez cependant que ce dernier ne peut saisir les objets primitifs
     // du présentoir (les objets sans constructeur, comme int, float, etc.).
-    protected double fValeur1;
-    protected double fValeur2;
+    private Ville paris;
+    private Ville springfield;
+    private Maire joe;
+    private Pays france = new Pays("France");
+    private Habitant homer;
+    private Habitant marge;
+    private Habitant bart;
+    private Habitant lisa;
 
     /**
      * Constructeur de la classe-test VilleTest
@@ -56,8 +62,13 @@ public class VilleTest
     public void setUp() // throws java.lang.Exception
     {
         // Initialisez ici vos engagements
-        fValeur1= 2.0;
-        fValeur2= 3.0;
+        springfield = new Ville("Paris", france);
+        springfield = new Ville("Springfield", france);
+        joe = new Maire("Quimby", "Joe", "H", springfield);
+        homer = new Habitant("Homer", "Simpson", "H", springfield);
+        marge = new Habitant("Marge", "Simpson", "F", springfield);
+        bart = new Habitant("Bart", "Simpson", "F", springfield);
+        lisa = new Habitant("Lisa", "Simpson", "F", springfield);
     }
 
     /**
@@ -72,19 +83,17 @@ public class VilleTest
     }
 
     @Test
-    public void testEmmenagement()
+    public void testEmmenagement() throws Exception
     {
-        //Ville springfield = new Ville("Springfield", 30720);
-        //assertEquals(30725, springfield.emmenagement(5));
-        assertEquals(30725, 30725);
+        homer.demenager(paris);
+        assertEquals(homer, paris.getHabitant("Homer", "Simpson"));
     }
 
     @Test
-    public void testDemenagement()
+    public void testDemenagement() throws Exception
     {
-        //Ville spingfield = new Ville("Springfield", 30720);
-        //assertEquals(30710, spingfield.demenagement(10));
-        assertEquals(30710, 30710);
+        homer.demenager(paris);
+        assertEquals(homer, paris.getHabitant("Homer", "Simpson"));
     }
 }
 

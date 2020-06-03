@@ -36,6 +36,10 @@ public class MaireTest
     private Ville springfield;
     private Maire joe;
     private Pays france = new Pays("France");
+    private Habitant homer;
+    private Habitant marge;
+    private Habitant bart;
+    private Habitant lisa;
 
     // Définissez ici les variables d'instance nécessaires à vos engagements;
     // Vous pouvez également les saisir automatiquement du présentoir
@@ -61,6 +65,10 @@ public class MaireTest
     {
         springfield = new Ville("Springfield", france);
         joe = new Maire("Quimby", "Joe", "H", springfield);
+        homer = new Habitant("Homer", "Simpson", "H", springfield);
+        marge = new Habitant("Marge", "Simpson", "F", springfield);
+        bart = new Habitant("Bart", "Simpson", "F", springfield);
+        lisa = new Habitant("Lisa", "Simpson", "F", springfield);
     }
 
     /**
@@ -81,6 +89,22 @@ public class MaireTest
     	springfield.election(joe);
         assertEquals(springfield, joe.getVille());
         assertEquals(joe, springfield.getMaire());
+    }
+    
+    
+    @Test
+    public void testPopulation() throws Exception
+    {
+    	springfield.election(joe);
+        homer.setTestCovid(true);
+        marge.setTestCovid(true);
+        bart.setTestCovid(true);
+        lisa.setTestCovid(true);
+
+        springfield.tauxInfection();
+        double taux = springfield.getTauxInfection();
+        joe.testerPopulation();
+        assertEquals(true, taux < springfield.tauxInfection());
     }
 }
 

@@ -25,9 +25,6 @@ public class ObserverTest {
 		asterix.addObserver(paris);
 		asterix.setTestCovid(true);
 		assertEquals(0.5, paris.getTauxInfection(), 0);
-		//assertEquals(0.5, paris.tauxInfection(), 0);
-		asterix.demenager(paris);
-		asterix.demenager(montpelier);
 	}
 
 }

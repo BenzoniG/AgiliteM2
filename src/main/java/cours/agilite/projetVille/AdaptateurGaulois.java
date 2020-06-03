@@ -29,7 +29,7 @@ public class AdaptateurGaulois extends Habitant
 
     public void deleteAmi(Gaulois ami) 
     {
-    	this.gaulois.deleteAmi(ami);;
+    	this.gaulois.deleteAmi(ami);
     }
     
     public void addAmi(Gaulois ami) 

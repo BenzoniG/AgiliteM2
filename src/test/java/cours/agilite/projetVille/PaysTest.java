@@ -41,6 +41,7 @@ public class PaysTest
     @Test
     public void testCapitale()
     {
+    	france.setCapitale(paris);
         assertEquals(paris, france.getCapitale());
         assertEquals(france, paris.getPays());
         assertEquals(france, perpignan.getPays());
